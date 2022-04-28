@@ -1,0 +1,7 @@
+library(tidyverse)
+library(htmlwidgets)
+library(rmarkdown)
+library(htmltools)
+library(maps)
+library(leaflet)
+library(tinytex)

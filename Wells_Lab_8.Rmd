@@ -1,0 +1,84 @@
+---
+title: "Wells_Lab_8"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r load-libraries, echo=FALSE,message=FALSE}
+library(tidyverse)
+library(htmlwidgets)
+library(rmarkdown)
+library(htmltools)
+library(maps)
+library(leaflet)
+library(tinytex)
+```
+![](img/logo.png)
+
+##
+About Central BBQ
+---
+
+GO WHERE THE LOCALS GO
+Memphians know great BBQ. And since it opened in 2002, Central BBQ has been ranked as the number one spot for BBQ in Memphis. The secrets to Central’s success?
+
+---
+
+Fall-off-the-Bone Meat
+You might have heard us say, “Smoke is Our Sauce.” That’s because we live in the hardwood capital of the world and use hickory and pecan woods, along with our intricate dry rub and a whole lot of patience, to craft the most tender, delicious piece of meat you’ve ever eaten— with or without the sauce.
+
+---
+
+Southern Hospitality
+We firmly believe even the best food falls flat without great hospitality. We’ll serve anyone hungry for BBQ and we’ll do it with the same generosity we would our best friends.
+
+---
+
+Good Times
+We take our BBQ seriously— but that’s where the serious stops around here. At Central BBQ, we encourage our guests to unwind, get messy, and most importantly, savor their time with us.
+
+---
+
+CENTRAL BBQ WAS BORN AND RAISED IN THE FIRES OF BARBECUE COMPETITION— WHERE ONLY THE ABSOLUTE BEST WAS GOOD ENOUGH.
+
+---
+
+Our founders Craig Blondis and Roger Sapp met on the barbecue circuit in the mid-80s and after competing in Memphis in May’s World Championship Barbecue Cooking Contest and many other local and regional BBQ competitions, they made the leap from friends to business partners. The pit at the first Central BBQ on Central Avenue was fired up in 2002 and has been stoked ever since thanks to our wonderful customers.
+
+---
+
+Central BBQ’s local success in Memphis has sparked national interest over the years, Our restaurant and founders have appeared on several national TV shows including Pitmasters, The Best Thing I Ever Ate, and BBQ with Bobby Flay, plus national publications such as USA Today, Garden & Gun, Southern Living and Men’s Health.
+
+---
+
+Over the years, Central BBQ has expanded far beyond Central Avenue due to customer demand. Our second location opened on Summer Avenue in 2006, our Downtown location in October 2012, and our fourth location is due to open in East Memphis in 2018. But no matter how much we grow, we will still always deliver one-of-a-kind BBQ served by friendly faces. That’s something we will never outgrow.
+
+---
+
+Come take a load off and try us out for the 1st or 1,000th time— we don’t think you’ll be disappointed.
+We look forward to hosting you soon.
+
+##
+Try One of Our Four Memphis Locations
+```{r central-locations,echo=TRUE}
+```
+
+```{r basic-leaflet-us}
+
+library(leaflet)
+
+library(maps)
+
+mapStates =  map("state", fill = TRUE, plot = FALSE)
+
+
+
+mapStates %>%
+
+leaflet() %>%
+
+  addPolygons(fillColor = topo.colors(10, alpha = NULL), stroke = FALSE)
+```
